@@ -23,14 +23,14 @@
   <header>
     <div class="header container">
       <a href="#" class="logo"><span class="logo--blue">Web</span>Studio</a>
-      <nav>
+      <nav class="menu">
         <ul class="header__left-menu">
           <li><a href="./index.html" class="header__left-menu__link current-page">Studio</a></li>
           <li><a href="./portofolio.html" class="header__left-menu__link">Portfolio</a></li>
           <li><a href="./contacts.html" class="header__left-menu__link">Contacts</a></li>
         </ul>
       </nav>
-      <div class="header__right-menu">
+      <div class="header__right-menu menu">
         <div class="header__right-menu__link">
           <svg class="mail-icon">
             <use href="./images/icons.svg#icon-mail"></use>
@@ -44,14 +44,61 @@
           <a href="tel:+12127724150">+1 212-772-4150</a>
         </div>
       </div>
+      <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
     </div>
   </header>
+<div class="menu-container js-menu-container" id="mobile-menu">
+  <button class="menu-toggle js-close-menu">
+    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+      <path fill-rule="evenodd"
+        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+        clip-rule="evenodd"></path>
+    </svg>
+  </button>
 
-  <main>
+  <ul class="mobile-menu">
+    <nav>
+      <ul>
+        <li><a href="./index.html" class="link">Studio</a></li>
+        <li><a href="./portofolio.html" class="link">Portfolio</a></li>
+        <li><a href="./contacts.html" class="link">Contacts</a></li>
+      </ul>
+    </nav>
+    <ul class=" mobile-menu menu-contacts">
+      <li class="menu-contact__item mcontact-tel">
+        <a class="mcontact__link link " href="tel:+12127724150"><svg class="contact-icon" width="10" height="16">
+            <use href="images/icons.svg#icon-smartphone"></use>
+          </svg>+1 212-772-4150</a>
+      </li>
+      <li class="menu-contact__item mcontact-mail">
+        <a class="mcontact__link link " href="mailto:info@devstudio.com"><svg class="contact-icon" width="16" height="12">
+            <use href="images/icons.svg#icon-envelope"></use>
+          </svg>info@devstudio.com</a>
+    
+      </li>
+    
+    </ul>
+        <ul class="social-links">
+          <li><a href="#" class="link"></a>Instagram</li>
+          <li><a href="#" class="link"></a><span class="line">|</span>Twitter</li>
+          <li><a href="#" class="link"></a><span class="line">|</span>Facebook</li>
+          <li><a href="#" class="link"></a><span class="line">|</span>LinkedIn</li>
+        </ul>
+    </div>
+  </ul>
+</div>
+
+<main>
     <section class="hero">
       <div class="hero__fluid">
         <div class="container">
-          <h1 class="hero__motto">EFFECTIVE SOLUTIONS FOR <br>YOUR BUSINESS</h1>
+          <h1 class="hero__motto">EFFECTIVE SOLUTIONS FOR YOUR BUSINESS</h1>
           <button type="button" class="hero__btn" data-modal-open>Request our service</button>
         </div>
       </div>
@@ -114,47 +161,48 @@
     </section>
     <section>
       <div class="container">
-        <ul class="advantages">
-          <li class="advantages__card">
-            <svg class="advantages__card__icon">
+        <ul class="about-us">
+          <li class="about-us__card">
+            <svg class="about-us__card__icon">
               <use href="./images/icons.svg#icon-antenna"></use>
             </svg>
-            <h4 class="advantages__card__title">ATTENTION TO DETAILS</h4>
-            <p>
+            <h4 class="about-us__card__title">ATTENTION TO DETAILS</h4>
+            <p class="about-us__card__description">
               We go into all the details and processes of your business to develop a customized solution.
             </p>
           </li>
-          <li class="advantages__card">
-            <svg class="advantages__card__icon">
+          <li class="about-us__card">
+            <svg class="about-us__card__icon">
               <use href="./images/icons.svg#icon-clock"></use>
             </svg>
-            <h4 class="advantages__card__title">PUNCTUALITY</h4>
-            <p>
+            <h4 class="about-us__card__title">PUNCTUALITY</h4>
+            <p class="about-us__card__description">
               With us, you can feel safe and secure. An important principle of the company: respect your time and
               deadlines.
             </p>
           </li>
-          <li class="advantages__card">
-            <svg class="advantages__card__icon">
+          <li class="about-us__card">
+            <svg class="about-us__card__icon">
               <use href="./images/icons.svg#icon-diagram"></use>
             </svg>
-            <h4 class="advantages__card__title">PLANNING</h4>
-            <p>
+            <h4 class="about-us__card__title">PLANNING</h4>
+            <p class="about-us__card__description">
               You will be able to observe and participate in every phase of solution development and implementation.
             </p>
           </li>
-          <li class="advantages__card">
-            <svg class="advantages__card__icon">
+          <li class="about-us__card">
+            <svg class="about-us__card__icon">
               <use href="./images/icons.svg#icon-astronaut"></use>
             </svg>
-            <h4 class="advantages__card__title">MODERN TECHNOLOGIES</h4>
-            <p>
+            <h4 class="about-us__card__title">MODERN TECHNOLOGIES</h4>
+            <p class="about-us__card__description">
               We use innovative tools to solve assigned tasks. It's time to simplify work processes.
             </p>
           </li>
         </ul>
       </div>
     </section>
+          <!-- 
     <div class="container">
       <section class="section">
         <h2 class="section__title">What we do</h2>
@@ -425,8 +473,9 @@
         </div>
       </div>
     </div>
-  </footer>
+  </footer> -->
   <script src="./js/modal.js"></script>
+  <script src="./js/mobile-menu.js"></script>
 </body>
 
 </html>

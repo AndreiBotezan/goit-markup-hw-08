@@ -1,0 +1,197 @@
+@import "../utils/globals";
+@import "../utils/variables";
+
+.modal {
+  display: flex;
+  background-color: hsla(0, 0%, 0%, 0.2);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1, 1);
+
+  &__box {
+    width: calc(100vw - 40px);
+    height: 609px;
+    background-color: $primary;
+    cursor: initial;
+    margin: auto;
+    position: relative;
+    box-shadow: 0px 1px 3px rgba($darkest, 0.12),
+      0px 1px 1px rgba($darkest, 0.14), 0px 2px 1px rgba($darkest, 0.2);
+    border-radius: 4px;
+  }
+
+  &__cancel-btn {
+    cursor: pointer;
+    position: absolute;
+    padding: 7px;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba($darkest, 0.2);
+    background-color: $primary;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      fill: $secondary;
+      cursor: pointer;
+    }
+  }
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.5, 0.5);
+}
+
+.service {
+  margin: 40px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $darkerer;
+  }
+
+  &__form {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+      position: relative;
+      margin-top: 10px;
+      font-size: 14px;
+      color: $dark;
+      margin-top: 10px;
+    }
+
+    &__input-container:focus,
+    &__input-container:hover {
+      border-color: $secondary;
+      color: rgba($secondary, 0.9);
+      cursor: pointer;
+    }
+
+    &__icon {
+      position: absolute;
+      left: 15px;
+      top: 33px;
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &__input {
+      outline: none;
+      margin-top: 5px;
+      padding: 12px;
+      padding-left: 40px;
+      width: 100%;
+      border: 1px solid rgba($darkerer, 0.2);
+      border-radius: 4px;
+      transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &__textarea {
+      resize: none;
+      padding-left: 12px;
+    }
+
+    &__input:hover,
+    &__input:focus {
+      border-color: $secondary;
+      cursor: pointer;
+    }
+  }
+
+  &__terms {
+    &__label {
+      margin: 20px 0 30px;
+      font-size: 12px;
+      color: $dark;
+      display: flex;
+      gap: 7px;
+    }
+
+    &__input {
+      display: none;
+    }
+
+    &__input:checked + .service__replace-checkbox {
+      background-color: $secondary;
+      border-color: $secondary;
+    }
+
+    &__input:checked + .service__replace-checkbox__icon {
+      opacity: 1;
+    }
+
+    &__link {
+      color: $secondary;
+      text-decoration: underline;
+    }
+  }
+
+  &__replace-checkbox {
+    border: 2px solid $darkerer;
+    border-radius: 2px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+
+    &__icon {
+      fill: $primary;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__submit-btn {
+    width: 200px;
+    margin: auto;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    padding: 10px 80px;
+    background-color: $secondary;
+    color: $primary;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .modal__box {
+    width: 450px;
+    height: 609px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal__box {
+    width: 528px;
+    height: 581px;
+  }
+
+  .service__terms__label {
+    margin: 20px 15px 30px;
+    font-size: 14px;
+  }
+}

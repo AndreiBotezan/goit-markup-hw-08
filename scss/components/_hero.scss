@@ -1,0 +1,58 @@
+@import "../utils/globals";
+@import "../utils/variables";
+
+.hero {
+  background: url("../images/bg-hero-img.jpg") no-repeat center;
+  background-size: cover;
+
+  &__fluid {
+    background-image: radial-gradient(rgba($darker, 0.5), rgba($darker, 0.3));
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__motto {
+    letter-spacing: 0.06em;
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    max-width: 360px;
+    color: $primary;
+  }
+
+  &__btn {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    background-color: $secondary;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: $primary;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    background-image: url("../images/bg-hero-img.jpg");
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    background-image: url("../images/bg-hero-img.jpg");
+    height: 600px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 44px;
+    line-height: 60px;
+    max-width: 696px;
+    margin: 0 auto;
+  }
+}
