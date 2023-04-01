@@ -4,24 +4,56 @@
 .about-us {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  margin: 94px 0 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 60px auto;
   gap: 30px;
 
   &__card {
+     align-items: center;
+     width: 100%;
+
     &__title {
       margin-bottom: 10px;
       margin-top: 30px;
+      align-self: flex-start;
     }
-
+    &__img {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background-color: $lightest;
+    }
     &__icon {
       box-sizing: content-box;
       width: 70px;
       height: 70px;
-      padding: 25px 100px;
       border-radius: 4px;
-      align-self: center;
-      background-color: $lightest;
+      padding: 25px;
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about-us__card {
+    flex-basis: calc((100% - 30px) / 2);
+  }
+
+  .about-us__card__icon {
+    width: 70px;
+    height: 70px;
+  }
+  .about-us__card__description {
+     text-align: left;
+  }
+  .about-us__card__title {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .about-us {
+    flex-wrap: nowrap;
+    justify-content: center;
   }
 }

@@ -3,7 +3,13 @@
 
 .footer {
   display: flex;
+  flex-wrap: wrap;
 
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   &__address {
     padding: 28px 0 60px;
     display: flex;
@@ -38,7 +44,7 @@
 
     &_container {
       margin-top: 75px;
-      margin-left: 94px;
+      margin-left: auto;
     }
 
     &__el {
@@ -71,8 +77,10 @@
   }
 
   &__subscription {
-    margin-top: 75px;
-    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
 
     &__title {
       font-family: "Roboto";
@@ -84,7 +92,9 @@
 
     &__form {
       display: flex;
-      align-items: end;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0 60px;
     }
 
     &__input {
@@ -92,7 +102,7 @@
       font-size: 16px;
       outline: none;
       width: 358px;
-      margin-top: 20px;
+      //margin-bottom: 20px;
       background-color: #2f303a;
       color: $primary;
       padding: 14px;
@@ -110,6 +120,7 @@
       height: 50px;
       margin-left: 12px;
       color: $primary;
+      margin-top: 20px;
       background: $secondary;
       border: none;
       box-shadow: 0px 4px 4px rgba($darkest, 0.15);
@@ -137,3 +148,28 @@
   color: $primary;
 }
 
+@media screen and (min-width: 480px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1200px) {
+  .footer {
+    flex-wrap: nowrap;
+    &__subscription {
+      margin-top: 75px;
+      margin-left: auto;
+      margin-right: 0;
+      &__title {
+        align-self: flex-start;
+      }
+      &__form {
+        flex-direction: row;
+      }
+      &__btn {
+        margin-top: 0;
+      }
+    }
+  }
+}
